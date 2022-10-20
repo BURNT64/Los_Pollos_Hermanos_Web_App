@@ -16,19 +16,42 @@ html {
 body {
     margin-bottom: 60px;
     background-color: #fccc00;
+    font: 1em arial;
 }
 
+/*header 1*/
 h1 {
     color: red;
-    font-family: verdana;
+    font: 1em arial;
     font-weight: bold;
 }
 
+/*Text CSS*/
 p {
-    font-family: verdana;
+    font: 1em arial;
     font-size: 20px;
 }
 
+/*Navigation bar*/
 nav {
     background-color: darkblue;
+    font: 1em arial;
+    height: 3em;
+    line-height: 3em;
+    text-align: center;
+    list-style: none;
+    text-transform: uppercase;
+}
+
+/*Red bar at the top and bottom of the page*/
+html:after, html:before {
+    content: "";
+    display: block;
+    background-color: #1f2935;
+    background-image: linear-gradient(45deg,#941c21 25%,transparent 0,transparent 75%,#941c21 0,#941c21),linear-gradient(-45deg,#941c21 25%,transparent 0,transparent 75%,#941c21 0,#941c21);
+    background-size: 32px 32px;
+    background-size: 2rem 2rem;
+    background-position: 50%;
+    height: 32px;
+    height: 2rem;
 }
