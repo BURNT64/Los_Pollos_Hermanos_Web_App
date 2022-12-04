@@ -6,11 +6,9 @@ namespace Los_Pollos_Hermanos_Web_App.Data
     {
         public static void Initialize(ResturantContext context)
         {
-            context.Database.EnsureCreated();
-
             var Foods = new Food[]
             {
-
+            
             };
 
             context.Food.AddRange(Foods);

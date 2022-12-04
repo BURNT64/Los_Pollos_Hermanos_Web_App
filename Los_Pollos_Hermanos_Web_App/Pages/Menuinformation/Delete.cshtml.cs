@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Los_Pollos_Hermanos_Web_App.Data;
 using Los_Pollos_Hermanos_Web_App.Models;
 
-namespace Los_Pollos_Hermanos_Web_App.Pages.Foods
+namespace Los_Pollos_Hermanos_Web_App.Pages.Menuinformation
 {
     public class DeleteModel : PageModel
     {
@@ -20,40 +20,40 @@ namespace Los_Pollos_Hermanos_Web_App.Pages.Foods
         }
 
         [BindProperty]
-      public Food Food { get; set; }
+      public MenuInfromation MenuInfromation { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.Food == null)
+            if (id == null || _context.MenuInfromation == null)
             {
                 return NotFound();
             }
 
-            var food = await _context.Food.FirstOrDefaultAsync(m => m.ID == id);
+            var menuinfromation = await _context.MenuInfromation.FirstOrDefaultAsync(m => m.FoodID == id);
 
-            if (food == null)
+            if (menuinfromation == null)
             {
                 return NotFound();
             }
             else 
             {
-                Food = food;
+                MenuInfromation = menuinfromation;
             }
             return Page();
         }
 
         public async Task<IActionResult> OnPostAsync(int? id)
         {
-            if (id == null || _context.Food == null)
+            if (id == null || _context.MenuInfromation == null)
             {
                 return NotFound();
             }
-            var food = await _context.Food.FindAsync(id);
+            var menuinfromation = await _context.MenuInfromation.FindAsync(id);
 
-            if (food != null)
+            if (menuinfromation != null)
             {
-                Food = food;
-                _context.Food.Remove(Food);
+                MenuInfromation = menuinfromation;
+                _context.MenuInfromation.Remove(MenuInfromation);
                 await _context.SaveChangesAsync();
             }
 

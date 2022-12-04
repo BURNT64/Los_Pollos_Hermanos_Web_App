@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Los_Pollos_Hermanos_Web_App.Data;
 using Los_Pollos_Hermanos_Web_App.Models;
 
-namespace Los_Pollos_Hermanos_Web_App.Pages.Foods
+namespace Los_Pollos_Hermanos_Web_App.Pages.Menuinformation
 {
     public class EditModel : PageModel
     {
@@ -21,21 +21,21 @@ namespace Los_Pollos_Hermanos_Web_App.Pages.Foods
         }
 
         [BindProperty]
-        public Food Food { get; set; } = default!;
+        public MenuInfromation MenuInfromation { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.Food == null)
+            if (id == null || _context.MenuInfromation == null)
             {
                 return NotFound();
             }
 
-            var food =  await _context.Food.FirstOrDefaultAsync(m => m.ID == id);
-            if (food == null)
+            var menuinfromation =  await _context.MenuInfromation.FirstOrDefaultAsync(m => m.FoodID == id);
+            if (menuinfromation == null)
             {
                 return NotFound();
             }
-            Food = food;
+            MenuInfromation = menuinfromation;
             return Page();
         }
 
@@ -48,7 +48,7 @@ namespace Los_Pollos_Hermanos_Web_App.Pages.Foods
                 return Page();
             }
 
-            _context.Attach(Food).State = EntityState.Modified;
+            _context.Attach(MenuInfromation).State = EntityState.Modified;
 
             try
             {
@@ -56,7 +56,7 @@ namespace Los_Pollos_Hermanos_Web_App.Pages.Foods
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!FoodExists(Food.ID))
+                if (!MenuInfromationExists(MenuInfromation.FoodID))
                 {
                     return NotFound();
                 }
@@ -69,9 +69,9 @@ namespace Los_Pollos_Hermanos_Web_App.Pages.Foods
             return RedirectToPage("./Index");
         }
 
-        private bool FoodExists(int id)
+        private bool MenuInfromationExists(int id)
         {
-          return _context.Food.Any(e => e.ID == id);
+          return _context.MenuInfromation.Any(e => e.FoodID == id);
         }
     }
 }

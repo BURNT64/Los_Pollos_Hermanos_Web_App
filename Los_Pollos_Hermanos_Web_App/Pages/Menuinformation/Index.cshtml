@@ -1,0 +1,48 @@
+﻿@page
+@model Los_Pollos_Hermanos_Web_App.Pages.Menuinformation.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MenuInfromation[0].MenuItemID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MenuInfromation[0].Startdate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MenuInfromation[0].Enddate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.MenuInfromation) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MenuItemID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Startdate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Enddate)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.FoodID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.FoodID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.FoodID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

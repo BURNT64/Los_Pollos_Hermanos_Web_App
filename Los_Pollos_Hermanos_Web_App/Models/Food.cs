@@ -1,11 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using MessagePack;
 
 namespace Los_Pollos_Hermanos_Web_App.Models
 {
     public class Food
     {
-        public int FoodID { get; set; }
+        public int ID { get; set; }
         public string? FoodName { get; set; }
     }
 }

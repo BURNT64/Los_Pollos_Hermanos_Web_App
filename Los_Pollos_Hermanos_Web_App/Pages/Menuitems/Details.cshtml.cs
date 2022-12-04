@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Los_Pollos_Hermanos_Web_App.Data;
 using Los_Pollos_Hermanos_Web_App.Models;
 
-namespace Los_Pollos_Hermanos_Web_App.Pages.Foods
+namespace Los_Pollos_Hermanos_Web_App.Pages.Menuitems
 {
     public class DetailsModel : PageModel
     {
@@ -19,23 +19,23 @@ namespace Los_Pollos_Hermanos_Web_App.Pages.Foods
             _context = context;
         }
 
-      public Food Food { get; set; }
+      public MenuItem MenuItem { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.Food == null)
+            if (id == null || _context.MenuItem == null)
             {
                 return NotFound();
             }
 
-            var food = await _context.Food.FirstOrDefaultAsync(m => m.ID == id);
-            if (food == null)
+            var menuitem = await _context.MenuItem.FirstOrDefaultAsync(m => m.MenuItemID == id);
+            if (menuitem == null)
             {
                 return NotFound();
             }
             else 
             {
-                Food = food;
+                MenuItem = menuitem;
             }
             return Page();
         }
