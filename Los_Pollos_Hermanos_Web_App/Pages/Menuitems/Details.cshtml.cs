@@ -29,6 +29,7 @@ namespace Los_Pollos_Hermanos_Web_App.Pages.Menuitems
             }
 
             var menuitem = await _context.MenuItem.FirstOrDefaultAsync(m => m.MenuItemID == id);
+
             if (menuitem == null)
             {
                 return NotFound();

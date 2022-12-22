@@ -12,7 +12,6 @@ namespace Los_Pollos_Hermanos_Web_App.Data
         public ResturantContext(DbContextOptions<ResturantContext> options) : base(options)
         {
         }
-
         public DbSet<Food> Food { get; set; }
         public DbSet<MenuInfromation> MenuInfromation { get; set; }
         public DbSet<MenuItem> MenuItem { get; set; }
@@ -23,6 +22,5 @@ namespace Los_Pollos_Hermanos_Web_App.Data
             modelBuilder.Entity<MenuInfromation>().ToTable("Menuinformation");
             modelBuilder.Entity<MenuItem>().ToTable("MenuItem");
         }
-
     }
 }

@@ -26,20 +26,24 @@ namespace Los_Pollos_Hermanos_Web_App.Pages.Foods
 
         [BindProperty]
         public Food Food { get; set; }
-        
+
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (!ModelState.IsValid)
+            if (!ModelState.IsValid) { return Page(); }
+            foreach (var file in Request.Form.Files)
             {
-                return Page();
-            }
+                MemoryStream ms = new MemoryStream();
+                file.CopyTo(ms);
+                Food.ImageData = ms.ToArray();
 
+                ms.Close();
+                ms.Dispose();
+            }
             _context.Food.Add(Food);
             await _context.SaveChangesAsync();
-
-            return RedirectToPage("./Index");
+            return RedirectToPage("/Foods/Index");
         }
     }
 }

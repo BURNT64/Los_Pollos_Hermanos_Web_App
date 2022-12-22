@@ -6,11 +6,14 @@ namespace Los_Pollos_Hermanos_Web_App.Models
 {
     public class MenuItem
     {
+        [Required]
         public int FoodID { get; set; }
         public int MenuItemID { get; set; }
+        [Required]
         public string? MenuItemName { get; set; }
+        [Required]
         public string? ItemDescription { get; set; }
-        public decimal Price { get; set; }
-     
+        [Required]
+        public decimal Price { get; set; } 
     }
 }

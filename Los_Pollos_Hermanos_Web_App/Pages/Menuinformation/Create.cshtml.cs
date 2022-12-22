@@ -27,7 +27,6 @@ namespace Los_Pollos_Hermanos_Web_App.Pages.Menuinformation
         [BindProperty]
         public MenuInfromation MenuInfromation { get; set; }
         
-
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
