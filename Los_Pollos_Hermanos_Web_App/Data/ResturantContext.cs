@@ -7,7 +7,7 @@ using Los_Pollos_Hermanos_Web_App.Models;
 
 namespace Los_Pollos_Hermanos_Web_App.Data
 {
-    public class ResturantContext : DbContext
+    public class ResturantContext: DbContext
     {
         public ResturantContext(DbContextOptions<ResturantContext> options) : base(options)
         {

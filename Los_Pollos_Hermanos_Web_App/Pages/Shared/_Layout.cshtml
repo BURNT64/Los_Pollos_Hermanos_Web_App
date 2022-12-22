@@ -7,19 +7,21 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Los_Pollos_Hermanos_Web_App.styles.css" asp-append-version="true" />
-
 </head>
 <body>
     <header>
         <img src="~/img/LPH logo.jpg" alt="los pollos hermanos logo" width="100%" height="100%">
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-darkblue  border-bottom box-shadow mb-3">
-            <div class="container">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm bg-primary navbar-light border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="~/img/LPH logo small.webp" alt="Logo" style="width:40px;" class="rounded-pill">
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                    <ul class="nav nav-pills" role="tab">
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-page="/Index">Home</a>
                         </li>
@@ -47,6 +49,11 @@
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-page="/Menuitems/index">Menuitems</a>
                         </li>
+                        <lil>
+                            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                                <i class="fa fa-bars"></i>
+                            </a>
+                        </lil>
                     </ul>
                 </div>
             </div>
@@ -59,7 +66,7 @@
     </div>
 
     <footer class="text center footer text-muted">
-        <div class="container">
+        <div class="container-fluid">
             &copy; 2022 - Los_Pollos_Hermanos_Web_App - <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
     </footer>

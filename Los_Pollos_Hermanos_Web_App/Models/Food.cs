@@ -9,6 +9,7 @@ namespace Los_Pollos_Hermanos_Web_App.Models
 
         public int ID { get; set; }
         [Required]
+        [DataType(DataType.Text)]
         public string? FoodName { get; set; }
         [Required]
         public string? ImageDescription { get; set; }

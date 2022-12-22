@@ -13,14 +13,11 @@ namespace Los_Pollos_Hermanos_Web_App.Pages.Foods
     public class IndexModel : PageModel
     {
         private readonly Los_Pollos_Hermanos_Web_App.Data.ResturantContext _context;
-
         public IndexModel(Los_Pollos_Hermanos_Web_App.Data.ResturantContext context)
         {
             _context = context;
         }
-
         public IList<Food> Food { get;set; } = default!;
-
         public async Task OnGetAsync()
         {
             if (_context.Food != null)
