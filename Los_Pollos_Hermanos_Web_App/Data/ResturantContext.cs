@@ -1,4 +1,6 @@
 ﻿using System;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,7 +9,7 @@ using Los_Pollos_Hermanos_Web_App.Models;
 
 namespace Los_Pollos_Hermanos_Web_App.Data
 {
-    public class ResturantContext: DbContext
+    public class ResturantContext: IdentityDbContext<ApplicationUser>
     {
         public ResturantContext(DbContextOptions<ResturantContext> options) : base(options)
         {
@@ -18,6 +20,7 @@ namespace Los_Pollos_Hermanos_Web_App.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Food>().ToTable("Food");
             modelBuilder.Entity<MenuInfromation>().ToTable("Menuinformation");
             modelBuilder.Entity<MenuItem>().ToTable("MenuItem");

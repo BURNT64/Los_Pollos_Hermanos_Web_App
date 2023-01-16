@@ -1,5 +1,6 @@
-﻿using Los_Pollos_Hermanos_Web_App.Data;
+using Los_Pollos_Hermanos_Web_App.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -37,6 +38,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseAuthentication();;
 
 app.UseAuthorization();
 
