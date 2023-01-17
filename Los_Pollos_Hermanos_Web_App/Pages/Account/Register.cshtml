@@ -4,6 +4,12 @@
     ViewData["Title"] = "Register";
 }
 
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
 <h1>Register</h1>
 
 <form method="post">
@@ -20,9 +26,9 @@
     </div>
 
     <div>
-        <label asp-for="Input.Password"></label>
-        <input asp-for="Input.Password" class="form-control" />
-        <span asp-validation-for="Input.Password"></span>
+        <label asp-for="Input.PasswordHash"></label>
+        <input asp-for="Input.PasswordHash" class="form-control" />
+        <span asp-validation-for="Input.PasswordHash"></span>
     </div>
 
     <div>
@@ -33,3 +39,4 @@
     <button type="submit">Register</button>
 
 </form> 
+<</html>

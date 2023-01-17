@@ -7,6 +7,10 @@
     "mssql2": {
       "type": "mssql.local",
       "connectionId": "ConnectionStrings:Los_Pollos_Hermanos_Web_AppContextConnection"
+    },
+    "mssql3": {
+      "type": "mssql.local",
+      "connectionId": "ConnectionStrings:AccountDbContextConnection"
     }
   }
 }

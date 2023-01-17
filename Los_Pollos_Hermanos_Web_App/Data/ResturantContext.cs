@@ -9,7 +9,7 @@ using Los_Pollos_Hermanos_Web_App.Models;
 
 namespace Los_Pollos_Hermanos_Web_App.Data
 {
-    public class ResturantContext: IdentityDbContext<ApplicationUser>
+    public class ResturantContext : IdentityDbContext<ApplicationUser>
     {
         public ResturantContext(DbContextOptions<ResturantContext> options) : base(options)
         {
@@ -17,6 +17,7 @@ namespace Los_Pollos_Hermanos_Web_App.Data
         public DbSet<Food> Food { get; set; }
         public DbSet<MenuInfromation> MenuInfromation { get; set; }
         public DbSet<MenuItem> MenuItem { get; set; }
+        public DbSet<ApplicationUser> ApplicationUsers{ get; set;}
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -24,6 +25,7 @@ namespace Los_Pollos_Hermanos_Web_App.Data
             modelBuilder.Entity<Food>().ToTable("Food");
             modelBuilder.Entity<MenuInfromation>().ToTable("Menuinformation");
             modelBuilder.Entity<MenuItem>().ToTable("MenuItem");
+            modelBuilder.Entity<ApplicationUser>().ToTable("ApplicationUsers");
         }
     }
 }
