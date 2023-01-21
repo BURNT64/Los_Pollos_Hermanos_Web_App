@@ -1,4 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Microsoft.EntityFrameworkCore;
+using Los_Pollos_Hermanos_Web_App.Data;
+using Los_Pollos_Hermanos_Web_App.Models;
 using System.Xml.Linq;
 using System;
 using System.Collections.Generic;

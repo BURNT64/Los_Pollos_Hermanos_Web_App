@@ -2,12 +2,14 @@
 using System;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace Los_Pollos_Hermanos_Web_App.Data
 {
     public class Startup
     {
         public IConfiguration Configuration { get; }
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -18,8 +20,9 @@ namespace Los_Pollos_Hermanos_Web_App.Data
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            services.AddControllersWithViews();
             services.AddDbContext<ResturantContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("AppDbContext")));
+                options.UseSqlServer(Configuration.GetConnectionString("ResturantContext")));
             services.AddIdentity<ApplicationUser, IdentityRole>()
              .AddEntityFrameworkStores<ResturantContext>()
              .AddDefaultTokenProviders();

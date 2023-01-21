@@ -1,8 +1,10 @@
+using Los_Pollos_Hermanos_Web_App;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Los_Pollos_Hermanos_Web_App.Data;
+using Los_Pollos_Hermanos_Web_App.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -16,7 +18,6 @@ namespace Los_Pollos_Hermanos_Web_App.Pages.Account
 
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly UserManager<ApplicationUser> _userManager;
-
 
         public RegisterModel(
             UserManager<ApplicationUser> userManager,

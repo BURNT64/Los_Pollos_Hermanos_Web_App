@@ -1,6 +1,9 @@
 using Los_Pollos_Hermanos_Web_App.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore;
+using Microsoft.AspNetCore.Hosting;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -8,8 +11,6 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddDbContext<ResturantContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("ResturantContext")));
-
-builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 var app = builder.Build();
 

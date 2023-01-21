@@ -89,8 +89,6 @@ footer {
     }
 }
 
-
-
 input[type=text], select, textarea {
     width: 100%;
     padding: 12px;
@@ -169,11 +167,9 @@ form.example::after {
     margin: 0 auto;
 }
 
-    #cover > img {
-        float: left;
-        border: 2px solid black;
-        width: 45%;
-        margin: 1.66%;
-    }
-
-
+#cover > img {
+    float: left;
+    border: 2px solid black;
+    width: 45%;
+    margin: 1.66%;
+}
