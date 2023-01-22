@@ -7,16 +7,19 @@
 
 <h1 class="display-4">Menu Items</h1>
 
+<!--Creates a prompt for users to click on to create new items in the database-->
 <p>
     <a asp-page="Create">Create New Item</a>
 </p>
 
+<!--Creates a search bar at the top of the database-->
 <form class="example" action="/action_page.php">
     <input type="text" placeholder="Search.." name="search">
     <button type="submit"><i class="fa fa-search"></i></button>
 </form>
 
 
+<!--Creates a table displaying all items in the database-->=
 <table class="table">
     <thead>
         <tr>
@@ -38,6 +41,8 @@
         </tr>
     </thead>
     <tbody>
+
+        <!--Allows users to add information to the database-->
 @foreach (var item in Model.MenuItem) {
         <tr>
             <td>
@@ -53,6 +58,7 @@
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
             <td>
+                <!--Crud functionality-->
                 <a asp-page="./Edit" asp-route-id="@item.MenuItemID">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.MenuItemID">Details</a> |
                 <a asp-page="./Delete" asp-route-id="@item.MenuItemID">Delete</a>

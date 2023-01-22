@@ -9,11 +9,13 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 </head>
 <body>
     <div class="text-center">
         <h1 class="display-4">Contact Los Pollos Hermanos</h1>
     </div>
+    <!--Creates a contact form (using formsubmit instead of php so users can send messages to the resturant owner-->
     <div>
         <form action="https://formsubmit.co/allwood.w2003@gmail.com" method="post">
             <label for="fname">First Name</label> 
@@ -26,6 +28,13 @@
             <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
             <input type="submit" value="Submit">
         </form>
+        <!--upon completing the form users are required to tick a captcha box stating that they are not a robot before their message can be submitted-->
     </div>
+
+    <h1 class="display-4">Our location on google maps</h1>
+    <!--Code for a map that displays the location of the resturant (not entirely accurate as the resturant is fiction, I found the location of where it is in the show but the resturant is now under a different name-->
+    <iframe 
+        src="https://storage.googleapis.com/maps-solutions-8lb85fm8t3/locator-plus/nfy8/locator-plus.html" width="100%" height="700px" style="boarder:0";> 
+    </iframe>
 </body>
 </html>

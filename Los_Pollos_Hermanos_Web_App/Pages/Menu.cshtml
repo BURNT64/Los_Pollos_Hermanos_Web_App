@@ -14,6 +14,7 @@
     <h1 class="display-4">Here is our menu</h1>
     <p>Take a look at what we have to offer here at los pollos hermanos</a>.</p>
 </div>
+    <!--Creates a duplicate table to show data within the database-->
     <table class="table">
         <thead>
             <tr>
@@ -23,7 +24,9 @@
                 <th>Purchess</th>
             </tr>
         </thead>       
-            @foreach (var item in Model.Food)
+
+        <!--Updates the database alongside with the Foods page so when an admin adds a food item the user can see it in the duplicate table-->
+        @foreach (var item in Model.Food)
             {
                 <tr>
                     @{
@@ -35,18 +38,21 @@
                         }
                         catch
                         {
-                            <td>
+                        <!--if no images is provided a generic blank image is used instead-->
+                        <td>
                                 <img src="/img/Blank.png" alt="No Image provided" />
                             </td>
                         }
                     }
-                    <td>
+                <!--Updates the information for FoodName And ItemDescription with the duplicate table-->
+                <td>
                         @Html.DisplayFor(modelItem => item.FoodName)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.ImageDescription)
                     </td>
                 <td>
+                    <!--Instead of CRUD functionality users can click the buy button to purchess and item-->
                     <button type="submit" asp-page-handler="Buy"
                         asp-route-itemID="@item.ID">
                         Buy
