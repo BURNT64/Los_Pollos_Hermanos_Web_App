@@ -5,8 +5,6 @@ namespace Los_Pollos_Hermanos_Web_App.Models
 {
     public class Food
     {
-        internal bool Active;
-
         public int ID { get; set; }
         [Required]
         [DataType(DataType.Text)]

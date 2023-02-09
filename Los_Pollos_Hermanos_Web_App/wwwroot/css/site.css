@@ -9,15 +9,18 @@ html {
   }
 }
 
+/*Css for page position*/
 html {
   position: relative;
   min-height: 100%;
 }
 
+/*Css for main body of code*/
 body {
     margin-bottom: 60px;
     background-color: #fccc00;
     font: 1em arial;
+    padding-bottom: 200px;
 }
 
 /*header 1*/
@@ -43,12 +46,6 @@ p {
     background-size: cover;
     background-image: url('../img/lph logo.jpg');
     min-height: 75%;
-}
- /*centeres the footer text*/
-footer {
-    font: 1em arial;
-    font-size: 20px;
-    text-align: center;
 }
 
 .row {
@@ -150,10 +147,11 @@ form.example button {
     border-left: none;
     cursor: pointer;
 }
-    /*Css for when the user hovers over the contact button*/
-    form.example button:hover {
-        background: #0b7dda;
-    }
+
+/*Css for when the user hovers over the contact button*/
+form.example button:hover {
+    background: #0b7dda;
+}
 
 form.example::after {
     content: "";
@@ -179,4 +177,21 @@ form.example::after {
 #map {
     width: 100%;
     height: 700px;
+}
+
+/*css for page footer*/
+footer {
+    font: 1em arial;
+    font-size: 20px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #111;
+    height: auto;
+    width: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: #fff;
 }

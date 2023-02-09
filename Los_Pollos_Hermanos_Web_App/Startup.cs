@@ -23,9 +23,12 @@ namespace Los_Pollos_Hermanos_Web_App.Data
             services.AddControllersWithViews();
             services.AddDbContext<ResturantContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("ResturantContext")));
+            services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
+           .AddEntityFrameworkStores<ResturantContext>();
             services.AddIdentity<ApplicationUser, IdentityRole>()
              .AddEntityFrameworkStores<ResturantContext>()
              .AddDefaultTokenProviders();
+            services.AddScoped<UserManager<ApplicationUser>>();
         }
     }
 }

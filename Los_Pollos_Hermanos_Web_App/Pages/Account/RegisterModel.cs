@@ -1,18 +1,20 @@
-﻿using System.ComponentModel.DataAnnotations;
-using Microsoft.EntityFrameworkCore;
-using Los_Pollos_Hermanos_Web_App.Data;
+﻿using Los_Pollos_Hermanos_Web_App.Data;
 using Los_Pollos_Hermanos_Web_App.Models;
-using System.Xml.Linq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
 
-
-namespace Los_Pollos_Hermanos_Web_App
+namespace Los_Pollos_Hermanos_Web_App.Pages.Account
 {
     public class RegistrationModel
     {
+        private readonly UserManager<ApplicationUser> _userManager;
+
+        public RegistrationModel(UserManager<ApplicationUser> userManager)
+        {
+            _userManager = userManager;
+        }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]

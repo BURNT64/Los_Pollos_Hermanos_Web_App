@@ -55,10 +55,21 @@
             @RenderBody()
         </main>
     </div>
-    <footer class="text center footer text-muted">
-        <div class="container-fluid">
-            © 2022 - Los_Pollos_Hermanos_Web_App - <a asp-area="" asp-page="/Privacy">Privacy</a>
+    <footer>
+        <div class="footer-content">
+            <h>Los Pollos Hemanos</h>
+        </div>
+        <div class="footer-content">
+            <p>© 2022, Los Pollos Hermanos all rights reserved</p>
+            <a href="http://validator.w3.org/check?uri=referer">Validate HTML</a>
+            <a href="http://jigsaw.w3.org/css-validator/check/referer">Validate CSS</a>
+            <a asp-page="/Admin">Admin</a>
         </div>
     </footer>
 </body>
 </html>
+
+@if (IsSectionDefined("scripts"))
+{
+    RenderSection("scripts");
+}

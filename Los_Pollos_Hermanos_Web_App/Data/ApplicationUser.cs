@@ -8,7 +8,6 @@ namespace Los_Pollos_Hermanos_Web_App.Data
 {
     public class ApplicationUser: IdentityUser
     {
-        public string UserName { get; set; }
-        public string Email { get; set; }
+       
     }
 }
