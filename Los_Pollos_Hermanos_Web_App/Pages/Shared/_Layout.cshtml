@@ -1,27 +1,33 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--Main character set-->
+    <!-- Define the character set for the page -->
     <meta charset="utf-8">
-    <!--Makes the website more accesible for Mobile devices-->
+    <!-- Configure the viewport for mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Obtains title of page and then adds website name at the end-->
+    <!-- Set the page title with website name -->
     <title>@ViewData["Title"] - Los_Pollos_Hermanos_Web_App</title>
-    <!--Favicon-->
+    <!-- Add the favicon for the website -->
     <link rel="icon" type="image/png" href="/img/LPH logo small.webp">
+    <!-- Include Bootstrap CSS -->
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Include custom CSS for the website -->
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true">
     <link rel="stylesheet" href="~/Los_Pollos_Hermanos_Web_App.styles.css" asp-append-version="true">
+    <!-- Include Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <header>
-    <img src="~/img/LPH%20logo.jpg" alt="los pollos hermanos logo" width="100%" height="100%">
-      <nav class="navbar navbar-expand-sm navbar-toggleable-sm bg-primary navbar-light border-bottom box-shadow mb-3">
+        <!-- Add the logo image for the website -->
+        <img src="~/img/LPH%20logo.jpg" alt="los pollos hermanos logo" width="100%" height="100%">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm bg-primary navbar-light border-bottom box-shadow mb-3">
             <div class="container-fluid">
+                <!-- Add the small logo image for the website -->
                 <a class="navbar-brand" href="#"><img src="~/img/LPH%20logo%20small.webp" alt="Logo" style="width:40px;" class="rounded-pill"></a>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="nav nav-pills" role="tab">
+                        <!-- Add the navigation links for the website -->
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-page="/Index">Home</a>
                         </li>
@@ -55,11 +61,13 @@
             </div>
         </nav>
     </header>
+    <!--Renders body content based on the page that is loaded this has cause a few validation errors-->
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
+    <!--contains all footer links -->
     <footer>
         <div class="footer-content">
             <h3>Los Pollos Hemanos</h3>
@@ -68,6 +76,7 @@
             <p>© 2022, Los Pollos Hermanos all rights reserved</p>
             <a href="http://validator.w3.org/check?uri=https://2111421.win.studentwebserver.co.uk/CO5227" target="_blank">Validate HTML</a>
             <a href="https://jigsaw.w3.org/css-validator/validator?uri=https://2111421.win.studentwebserver.co.uk/CO5227" target="_blank">Validate CSS</a>
+            <a asp-page="/Admin">Admin</a>
             <a asp-page="/Index">Home</a>
             <a asp-page="/Contact">Contact</a>
             <a asp-page="/About">About</a>
@@ -79,6 +88,7 @@
 </body>
 </html>
 
+<!--checks if a section with the name scripts is defined in the razor view-->
 @if (IsSectionDefined("scripts"))
 {
     RenderSection("scripts");

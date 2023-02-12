@@ -15,8 +15,10 @@
         <h1 class="display-4">Here is our menu</h1>
         <p>Take a look at what we have to offer here at Los Pollos Hermanos.</p>
     </div>
+    <!-- This table contains the main content of the page, including a loop that iterates over items in a collection -->
     <table class="table">
         <thead>
+            <!-- This row contains the column headers for the table -->
             <tr>
                 <th>Food</th>
                 <th>Menu Items</th>
@@ -25,10 +27,13 @@
             </tr>
         </thead>
         <tbody>
+            <!-- This foreach loop generates a row for each item in the collection -->
             @foreach (var item in Model.Food)
             {
+                <!-- This row contains data for a single item in the collection -->
                 <tr>
                     <td>
+                        <!-- This condition displays an image if the item has image data, or a default image otherwise -->
                         @if (item.ImageData != null)
                         {
                             <img src="@string.Format("data:image/jpg;base64,{0}", Convert.ToBase64String(item.ImageData))" alt="@item.ImageDescription" />
@@ -39,12 +44,15 @@
                         }
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.FoodName)
+                        <!-- This displays the name of the food item -->
+                    @Html.DisplayFor(modelItem => item.FoodName)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.ImageDescription)
+                        <!-- This displays a description of the image, if any -->
+                    @Html.DisplayFor(modelItem => item.ImageDescription)
                     </td>
                     <td>
+                        <!-- This form creates a "Buy" button that submits a request to purchase the item -->
                         <form method="post" asp-page-handler="Buy" asp-route-itemID="@item.ID">
                             <button type="submit">Buy</button>
                         </form>

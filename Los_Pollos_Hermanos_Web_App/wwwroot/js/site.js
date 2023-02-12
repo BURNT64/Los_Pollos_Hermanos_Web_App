@@ -1,11 +1,11 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
-
-// Write your JavaScript code.
+﻿// Get the search input element and the search filter value
+// Get the menu list and its items
+// Loop through all list items and hide those that don't match the search query
+ //the scripts at the bottom are for jQuery and Bootstrap
 
 <>
     <script>
-        function myFunction() {}
+        function myFunction() { }
         var input, filter, ul, li, a, i;
         input = document.getElementById("mySearch");
         filter = input.value.toUpperCase();
