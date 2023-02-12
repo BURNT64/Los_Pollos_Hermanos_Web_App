@@ -1,46 +1,46 @@
-/*Css for html font size*/
+/* Set default font size for the document */
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
+/* Increase font size on medium sized screens and up */
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
-/*Css for page position*/
+/* Set page height to 100% */
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
-/*Css for main body of code*/
+/* Main body styles */
 body {
     margin-bottom: 60px;
     background-color: #fccc00;
-    font: 1em arial;
+    font: 1em Arial;
     padding-bottom: 200px;
 }
 
-/*header 1*/
+/* Header 1 styles */
 h1 {
-    font: 1em arial;
+    font: 1em Arial;
     font-weight: bold;
     text-align: center;
     text-shadow: 1px 1px;
 }
 
-/*Text CSS*/
+/* Paragraph styles */
 p {
-    font: 1em arial;
+    font: 1em Arial;
     font-size: 20px;
     text-align: center;
     text-shadow: 1px 1px;
 }
 
-/*background image css*/
-
+/* Background image styles */
 .bgimg {
     background-position: center;
     background-size: cover;
@@ -48,26 +48,21 @@ p {
     min-height: 75%;
 }
 
+/* Flexbox styles for columns */
 .row {
     display: flex;
     flex-wrap: wrap;
     padding: 0 4px;
 }
 
-/* Create four equal columns that sits next to each other */
+/* Create four equal columns that sit next to each other */
 .column {
     flex: 25%;
     max-width: 25%;
     padding: 0 2px;
 }
 
-    .column img {
-        margin-top: 8px;
-        vertical-align: middle;
-        width: 100%;
-    }
-
-/* Responsive layout - makes a two column-layout instead of four columns */
+/* Make two columns on smaller screens */
 @media screen and (max-width: 800px) {
     .column {
         flex: 50%;
@@ -75,7 +70,7 @@ p {
     }
 }
 
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+/* Make columns stack on top of each other on even smaller screens */
 @media screen and (max-width: 600px) {
     .column {
         flex: 100%;
@@ -83,7 +78,7 @@ p {
     }
 }
 
-/*Css for First name and last name text boxes*/
+/* Styles for text inputs, selects, and textareas */
 input[type=text], select, textarea {
     width: 100%;
     padding: 12px;
@@ -95,8 +90,8 @@ input[type=text], select, textarea {
     resize: vertical;
 }
 
-/*Css for email text box in contact form*/
-input[type=email], select, textarea {
+/* Styles for email inputs */
+input[type=email] {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -107,6 +102,7 @@ input[type=email], select, textarea {
     resize: vertical;
 }
 
+/* Styles for submit button */
 input[type=submit] {
     background-color: #04AA6D;
     color: white;
@@ -115,18 +111,23 @@ input[type=submit] {
     border-radius: 4px;
     cursor: pointer;
 }
+
+    /* Change button background color on hover */
     input[type=submit]:hover {
         background-color: #45a049;
     }
 
+/* Set default font family for the document */
 body {
     font-family: Arial;
 }
 
+/* Set box-sizing property for all elements */
 * {
     box-sizing: border-box;
 }
 
+/* Styles for text input on example form */
 form.example input[type=text] {
     font-size: 17px;
     border: 1px solid grey;
