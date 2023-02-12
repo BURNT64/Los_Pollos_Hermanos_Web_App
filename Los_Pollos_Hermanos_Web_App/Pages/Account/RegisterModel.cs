@@ -1,5 +1,4 @@
 ﻿using Los_Pollos_Hermanos_Web_App.Data;
-using Los_Pollos_Hermanos_Web_App.Models;
 using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
